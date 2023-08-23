@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice Page</title>
+  <style>
+        
+    
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Invoice Page</h1>
+  <br>
+  <br>
+  <form id="newInvoice">
+
+    <div id="io">
+    <label for="name" class="lab" >Name:  </label>
+    <input type="text" onkeyup="this.value = this.value.replace(/[^a-zA-Z ]/, '')" class="ip" id="name" maxlength="30" placeholder="John Doe" required>
+    <br>
+<!--  
+    <label for="email" class="lab">E-mail:  </label>
+    <input type="email" id="email" class="ip" maxlength="50" pattern="[^ @]*@[^ @]*" placeholder="abc123@gmail.com" required>
+    <br>
+-->
+    
+    <label for="mobile" class="lab">Mobile:  </label>
+    <input type="number" id="mobile" class="ip" maxlength="10" pattern="[0-9]{10}" placeholder="7869043565" required>
+    <br>
+
+    
+    <labe for="invoiceNumber"></labe>
+    <readonly>
+
+    
+    <label for="date" class="lab">Date:  </label>
+    <input type="text" id="date" class="ip" onfocus="(this.type='date')" placeholder="DD/MM/YYYY" required>
+
+    <br>
+
+    
+    <label for="product" class="lab">Product:</label>
+    <select id="product" class="ip" required>
+      <option value="">Select a product</option>
+      <option value="aata">Aata 1Kg Pack</option>
+      <option value="bread">Bread</option>
+      <option value="coke">Coke</option>
+      <option value="dairy_milk">Dairy Milk</option>
+      <option value="ghee">Ghee</option>
+      <option value="kurkure">Kurkure</option>
+      <option value="lays">Lays</option>
+      <option value="maggie">Maggie</option>
+      <option value="milk">Milk</option>
+      <option value="rice">Rice 1Kg Pack</option>
+      <option value="sev">Sev</option>
+      <option value="suger">Suger 1Kg Pack</option>
+      <option value="water">Water Bottle</option>      
+    </select>
+
+    <br>
+    
+    <label for="quantity" class="lab">Quantity:</label>
+    <input type="number" id="quantity" class="ip" min="1" max="10" placeholder="0" required>
+
+    <br>
+
+    
+    <label for="rate" class="lab">Rate:</label>
+    <input type="number" id="rate" class="ip" step="0.25" placeholder="50.00" required>
+    <br>
+
+    
+    <button type="button" id="newProductButton" class="lab button">Add Product</button>
+
+  </div>
+  </form>
+
+  
+  <table id="invoiceTable">
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Product</th>
+        <th>Rate</th>
+        <th>Quntity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Selected items in the cart will be shown here  -->
+    </tbody>
+  </table>
+  
+  <p class="mar">Grand Total: <span id="grandTotal">0</span></p>
+  
+  <button type="button" class="mar button" id="generateInvoiceBtn">Generate Invoice</button>
+  
+  <div id="invoiceDetails">
+    <!-- All the details of the invoice will be generated and displayed here -->
+  </div>
+  <script type="text/javascript" src="app.js"></script>
+  
+
+</body>
+</html>
